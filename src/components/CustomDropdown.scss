@@ -1,0 +1,160 @@
+.dropdown-container {
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .list-wrapper {
+    position: relative;
+
+    & input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      border: 1px solid blue;
+    }
+  }
+
+  .remove-btn {
+    border: none;
+    background-color: none;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .dropdown-button {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #4caf50;
+    border-radius: 6px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #388e3c;
+      border-color: #388e3c;
+    }
+  }
+
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .select-dropdown {
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.5s ease;
+    max-width: 320px;
+  }
+
+  .select-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select-dropdown:focus-within {
+    box-shadow: 0 4px 4px rgba(21, 172, 109, 0.6);
+  }
+
+  .select-dropdown::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+  }
+
+  .select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    z-index: 999;
+    width: 220px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    &.open {
+      display: flex;
+    }
+
+    .selected-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        .option-text {
+          margin-right: 8px;
+        }
+
+        .remove-button {
+          background: none;
+          border: none;
+          color: #777;
+          cursor: pointer;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #333;
+          }
+        }
+      }
+    }
+
+    input {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin: 8px 0;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      &:focus {
+        outline: none;
+        border-color: rgb(10, 145, 77);
+      }
+    }
+  }
+}
